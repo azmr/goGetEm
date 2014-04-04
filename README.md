@@ -29,11 +29,13 @@ sh goGetMe.sh [filename]
 ```
 Each time this script is run, the packages it finds that aren't currently in `.goGot` will be arranged alphabetically and appended to it. This will result in alphabetically arranged chunks in chronological order. If you would like to have the whole file in alphabetical order, removing `.goGot` and running this script again, so it will pick up all your packages and arrange them alphabetically. (I would recommend making a backup of the file, just in case). You could also use the CLI tool `sort`.
 
+-------------------------------------------------------------
 
 `goGetEm.sh` runs `go get $package` on all the packages listed in `.goGot`. If the package list has another name, use the same syntax as above to show the script which file to use:
 ```sh
 sh goGetEm.sh [filename]
 ```
+-------------------------------------------------------------
 
 `goGetUp.sh` is a small wrapper around the two previous scripts that runs `go get -u` any packages in `.goGot` that are not in the `$GOPATH/src` folder and updates the rest that are. This uses the same syntax once again:
 ```sh
