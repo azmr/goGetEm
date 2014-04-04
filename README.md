@@ -27,7 +27,7 @@ sh goGetMe.sh [filename]
 sh goGetEm.sh [filename]
 ```
 
-`goGetUp.sh` is a small wrapper around the two previous scripts that `go gets` any packages in `.goGot` that are not in the `$GOPATH/src` folder and updates the rest that are. This uses the same syntax once again:
+`goGetUp.sh` is a small wrapper around the two previous scripts that runs `go get -u` any packages in `.goGot` that are not in the `$GOPATH/src` folder and updates the rest that are. This uses the same syntax once again:
 ```sh
 sh goGetUp.sh [filename]
 ```
