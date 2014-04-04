@@ -4,6 +4,12 @@ goGetEm
 `goGetEm` is a small collection of shell scripts for managing your *Go* packages.
 
 
+Disclaimer
+---------
+
+I have tested this on bash and zsh and it works as it should *for me*. I don't see any reason why it should do anything wrong, but YMMV and you use at your own risk.
+
+
 Uses
 ----
 
@@ -17,10 +23,12 @@ There are a couple of things it is useful for:
 The Scripts
 -----------
 
-`goGetMe.sh` creates a newline delimited list of packages from the files in your $GOPATH/src folder and saves this in a file called `$GOPATH/src/.goGot` by default. You can set the filename with a variable as shown here:
+`goGetMe.sh` creates a newline delimited list of packages from the files in your $GOPATH/src folder and saves this in a file called `$GOPATH/src/.goGot` by default (I will continue to refer to this here as `.goGot`, but it could be called anything). You can set the filename with a variable as shown here:
 ```sh
 sh goGetMe.sh [filename]
 ```
+Each time this script is run, the packages it finds that aren't currently in `.goGot` will be arranged alphabetically and appended to it. This will result in alphabetically arranged chunks in chronological order. If you would like to have the whole file in alphabetical order, removing `.goGot` and running this script again, so it will pick up all your packages and arrange them alphabetically. (I would recommend making a backup of the file, just in case). You could also use the CLI tool `sort`.
+
 
 `goGetEm.sh` runs `go get $package` on all the packages listed in `.goGot`. If the package list has another name, use the same syntax as above to show the script which file to use:
 ```sh
@@ -45,3 +53,13 @@ Alternatively, fork this repo, so that you always have your `.goGot` under a VCS
 
 
 Go get 'em tiger.
+
+
+TODO
+----
+
+[X] Basics - create syntactically correct package list from filetree.  
+[X] Basics - `go get` all packages in a file.  
+[X] Basics - single command to 'update'.  
+[] Add option to `goGetMe.sh` to specify which directories, i.e. which super-repositories, should be scanned to find files for `.goGot`.  
+[] Add option to `goGetEm.sh` and `goGetUp.sh` to specify which file(s) contain(s) the list of packages to download.  
