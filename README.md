@@ -9,9 +9,9 @@ Uses
 
 There are a couple of things it is useful for:
 
-	1. "Backing up" your src files in a way that doesn't take up much space, so that you can quickly get your Go files up and running on new workstations.
-	2. Easily sharing the go packages you use with others.
-	3. Keeping your go packages up to date without hassle. `goGetUp.sh`could be set as a cron job to make this even less effort.
+1. "Backing up" your src files in a way that doesn't take up much space, so that you can quickly get your Go files up and running on new workstations.
+2. Easily sharing the go packages you use with others.
+3. Keeping your go packages up to date without hassle. `goGetUp.sh`could be set as a cron job to make this even less effort.
 
 
 The Scripts
